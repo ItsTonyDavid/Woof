@@ -4,6 +4,13 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const uniqueValidator = require('mongoose-unique-validator')
 
+if ( process.env.NODE_ENV === 'production') {
+    var secret = process.env.secret
+} else {
+    const config = require('../config')
+    var secret = config.secret
+}
+
 var userSchema = new mongoose.Schema({
   name:{
     type: String,
@@ -37,7 +44,11 @@ var userSchema = new mongoose.Schema({
           type: String,
           required: true
       }
-  }]
+  }],
+  admin:{
+    type: Boolean,
+    required: false
+  }
 },{
   toObject: {
     virtuals: true
@@ -80,12 +91,16 @@ userSchema.statics.findByCredentials = function(email, password) {
 
 userSchema.methods.generateToken = function() {
     const user = this
-    const token = jwt.sign({ _id: user._id.toString() }, secret, { expiresIn: '7 days'})
+    console.log(user);
+    const token = jwt.sign({ _id: user._id.toString() }, secret, { expiresIn: '3 days'})
     user.tokens = user.tokens.concat({ token })
     return new Promise(function( resolve, reject) {
+        console.log("enters promise");
         user.save().then(function(user){
+          console.log("enters then");
             return resolve(token)
         }).catch(function(error) {
+          console.log("catch error");
             return reject(error)
         })
     })
