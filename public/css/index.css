@@ -1,0 +1,63 @@
+
+
+.is-season{
+  font-family: 'Permanent Marker', cursive;
+}
+
+.searchInput{
+  color: white;
+  background-color: hsl(0, 0%, 21%);
+  border: 0px;
+}
+
+.is-little-padding{
+  padding-top: 20px;
+}
+
+.searchInput::placeholder{
+  color: white;
+}
+
+.searchInput:focus {
+    border: 0px;
+ }
+
+.is-text-align{
+  text-align: center;
+}
+
+.is-centered{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.is-paddingles{
+  padding: 0px;
+}
+
+.is-marginless{
+  margin: 0px;
+}
+
+.titleFooter{
+  text-align: left;
+  margin-left: 100px;
+}
+
+.subtitleFooter{
+  text-align: right;
+  margin-right: 30px;
+}
+
+.is-fixed-top{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+}
+
+.yellow{
+  color: #f28d00;
+}

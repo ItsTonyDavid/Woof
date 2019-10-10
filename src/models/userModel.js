@@ -17,8 +17,7 @@ var userSchema = new mongoose.Schema({
     required: true
   },
   phone:{
-    type: Number,
-    required: true
+    type: Number
   },
   email: {
       type: String,
