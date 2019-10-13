@@ -14,6 +14,7 @@ router.post('/createUser', user.createUser); //Create one user
 router.post('/login/', user.login); //User login
 router.post('/login/admin', user.isAdmin, user.login); //Admin login
 router.post('/logout', auth, user.logout); //User logout
+router.post('/user/edit/:id', user.updateUser) //Edit user information
 
 router.get('*', function(req, res) {
   res.send({

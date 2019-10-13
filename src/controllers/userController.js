@@ -42,9 +42,30 @@ const logout = function(req, res){
   });
 }
 
+const updateUser = function(req, res) {
+  const _id = req.params.id
+  const updates = Object.keys(req.body)
+  const allowedUpdates = ['email', 'name', 'password', 'phone']
+  const isValidUpdate = updates.every((update) => allowedUpdates.includes(update))
+  if (!isValidUpdate){
+    return res.status(400).send({
+      error: 'Invalid update, only allowed updates: ' + allowedUpdates
+    })
+  }
+    User.findByIdAndUpdate(_id, req.body).then(function(user) {
+      if (!user){
+        return res.status(404).send()
+      }
+      return res.send(user)
+    }).catch(function(error) {
+      res.status(500).send(error)
+    })
+}
+
 module.exports = {
   createUser: createUser,
   login: login,
   logout: logout,
-  isAdmin: isAdmin
+  isAdmin: isAdmin,
+  updateUser: updateUser
 };
