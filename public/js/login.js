@@ -1,12 +1,8 @@
-
-
-$( "#signup" ).click(function() {
-  var name = $('#name').val() + " " + $('#lastname').val()
+$( "#login" ).click(function() {
   var email = $('#email').val()
-  var pass = $('#password').val()
+  var pass = $('#pass').val()
 
   json_to_send = {
-    "name": name,
     "email": email,
     "password": pass
   };
@@ -15,7 +11,7 @@ $( "#signup" ).click(function() {
 
   $.ajax({
     //url: 'http://trackr-tec.herokuapp.com/users/login', // url: 'https://tuapp.herokuapp.com/users/login'
-    url: 'http://localhost:3000/createUser',
+    url: 'http://localhost:3000/login',
     headers: {
         'Content-Type':'application/json'
     },
@@ -28,15 +24,6 @@ $( "#signup" ).click(function() {
     error: function(error_msg) {
       console.log(error_msg);
       var err = (error_msg.responseText)
-
-      if(err == '{\"error\":\"User does not exist\"}'){
-        username.classList.remove("is-success");
-        username.classList.add("is-danger");
-      }
-      else{
-        username.classList.remove("is-danger");
-        username.classList.add("is-success");
-      }
     }
 
   });

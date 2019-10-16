@@ -11,16 +11,9 @@
   </head>
 
   <body>
-    <!-- Navbar -->
-    <nav class="navbar is-dark is-montserrat" role="navigation" aria-label="main navigation">
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-      <div id="navbarBasicExample" class="navbar-menu is-mini">
-        <div class="navbar-start">
-          <div class="navbar-item">
+      <!-- Navbar  -->
+      <nav class="navbar is-dark" role="navigation" aria-label="dropdown navigation">
+          <div class="navbar-start">
             <p class="control has-icons-left">
               <input class="input searchInput" type="search" placeholder="SEARCH">
               <span class="icon is-small is-left">
@@ -28,81 +21,54 @@
               </span>
             </p>
           </div>
-        </div>
-        <div class="navbar-end">
-          <!--
-          <div class="navbar-item">
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More
-              </a>
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  About
-                </a>
-                <a class="navbar-item">
-                  Jobs
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
+
+          <div class="navbar-end">
+            <a class="button is-dark" style="text-align: right;">
+              <span class="icon">
+                <i class="fas fa-user"></i>
+              </span>
+              <span>Sign In</span>
+            </a>
           </div>
-          -->
-          <a class="navbar-item has-icons-left">
-            <span class="icon is-small is-left" style="margin-right: 5px;">
-              <i class="fas fa-info"></i>
-            </span>
-            <p>HELP & INFO</p>
-          </a>
-          <a class="navbar-item has-icons-left">
-            <span class="icon is-small is-left" style="margin-right: 5px;">
-              <i class="fas fa-user"></i>
-            </span>
-            <p>SIGN UP</p>
-          </a>
-        </div>
-      </div>
       </nav>
 
     <!-- Second Navbar -->
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-text-align">
+    <div id="section2" style="z-index: 5;">
+    <section class="hero is-small-hero">
+          <div class="columns" style="margin-top: auto; margin-bottom: auto;">
+            <div class="column is-4 is-text-align">
               <h1 class="is-logo title is-1"> WoofShop</h1>
             </div>
             <div class="column">
               <div class="columns is-little-padding">
-                <div class="column is-text-align">
-                  <p class="is-montserrat-bold"> MEN </p>
+                <div class="column">
+                  <div class="columns">
+                    <div class="column is-text-align">
+                      <p class="is-montserrat-bold"> MEN </p>
+                    </div>
+                    <div class="column is-text-align">
+                      <p class="is-montserrat-bold"> WOMEN </p>
+                    </div>
+                    <div class="column is-text-align">
+                      <p class="is-montserrat-bold"> ACCESSORIES </p>
+                    </div>
+                    <div class="column is-text-align">
+                      <p class="is-montserrat-bold"> ALL </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="column is-text-align">
-                  <p class="is-montserrat-bold"> WOMEN </p>
-                </div>
-                <div class="column is-text-align">
-                  <p class="is-montserrat-bold"> ACCESSORIES </p>
-                </div>
-                <div class="column is-text-align">
-                  <p class="is-montserrat-bold"> ALL </p>
+                <div class="column is-centered">
+                  <figure class="image is-24x24 is-centered">
+                    <img class="is-img-center is-centered" src="./img/cart.png">
+                  </figure>
                 </div>
               </div>
             </div>
-            <div class="column is-centered">
-              <figure class="image is-24x24 is-little-padding is-centered">
-                <img class="is-img-center is-centered" src="./img/cart.png">
-              </figure>
-            </div>
           </div>
-        </div>
-      </div>
     </section>
+  </div>
+
+      <div id="sticky"></div>
 
     <!-- pictures -->
     <section class="hero is-light is-text-align">

@@ -1,4 +1,6 @@
-
+.navbar {
+    min-height: 2rem;
+}
 
 .is-season{
   font-family: 'Permanent Marker', cursive;
@@ -8,10 +10,11 @@
   color: white;
   background-color: hsl(0, 0%, 21%);
   border: 0px;
+  width: 100%;
 }
 
 .is-little-padding{
-  padding-top: 20px;
+  padding-top: 15px;
 }
 
 .searchInput::placeholder{
@@ -60,4 +63,21 @@
 
 .yellow{
   color: #f28d00;
+}
+
+.is-mini{
+  height: 40px;
+}
+
+.is-small-hero{
+  height: auto;
+  padding-top: auto;
+  padding-bottom: auto;
+  background-color: white;
+  width: 100%;
+}
+
+.middle-vertical{
+  margin-top: auto;
+  margin-bottom: auto;
 }
