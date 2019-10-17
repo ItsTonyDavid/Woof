@@ -15,10 +15,12 @@ router.post('/createUser', user.createUser); //Create one user
 router.post('/login', user.login); //User login
 router.post('/login/admin', user.isAdmin, user.login); //Admin login
 router.post('/logout', auth, user.logout); //User logout
-router.patch('/user/edit/:id', user.updateUser); //Edit user information
+router.patch('/user/edit/:id', auth, user.updateUser); //Edit user information
 
 router.post('/postItem', admin, item.createItem); //Post a new item.
 router.delete('/deleteItem', admin, item.deleteItem); //delete a item with its name.
+router.post('/updateItemAdmin/:id', admin, item.updateItemAdmin) //Update item admin
+router.post('/updateItemUser/:id', auth, item.updateItemUser) //Update item user
 
 
 router.get('*', function(req, res) {
