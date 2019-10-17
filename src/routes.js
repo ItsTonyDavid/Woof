@@ -20,6 +20,7 @@ router.patch('/user/edit/:id', user.updateUser); //Edit user information
 router.post('/postItem', admin, item.createItem); //Post a new item.
 router.delete('/deleteItem', admin, item.deleteItem); //delete a item with its name.
 
+
 router.get('*', function(req, res) {
   res.send({
     error: 'This route does not exist... But at least you have internet conecction!'

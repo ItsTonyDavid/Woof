@@ -10,7 +10,12 @@ const createItem = function(req, res){
 }
 
 const deleteItem = function(req, res){
-
+  item = req.body.name
+  Item.findOneAndRemove({ name: item }).then(function(itemres){
+    res.send({item: "deleted"});
+  }).catch(function(error){
+    res.status(500).send(error)
+  })
 }
 
 const updatePrice = function(req, res){
@@ -29,3 +34,5 @@ module.exports = {
   createItem: createItem,
   deleteItem: deleteItem
 };
+
+//findOneAndRemove({ _id: id }, ...)
