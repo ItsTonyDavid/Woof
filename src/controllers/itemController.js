@@ -58,6 +58,11 @@ const updateItemUser = function(req, res){
   })
 }
 
+// const getItemByType(req,res){
+//   const type = req.params.type
+//
+// }
+
 module.exports = {
   createItem: createItem,
   deleteItem: deleteItem,

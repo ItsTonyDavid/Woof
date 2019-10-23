@@ -19,8 +19,8 @@ router.patch('/user/edit/:id', auth, user.updateUser); //Edit user information
 
 router.post('/postItem', admin, item.createItem); //Post a new item.
 router.delete('/deleteItem', admin, item.deleteItem); //delete a item with its name.
-router.post('/updateItemAdmin/:id', admin, item.updateItemAdmin) //Update item admin
-router.post('/updateItemUser/:id', auth, item.updateItemUser) //Update item user
+router.patch('/updateItemAdmin/:id', admin, item.updateItemAdmin) //Update item admin
+router.patch('/updateItemUser/:id', auth, item.updateItemUser) //Update item user
 
 
 router.get('*', function(req, res) {

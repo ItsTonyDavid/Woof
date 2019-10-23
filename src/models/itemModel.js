@@ -31,6 +31,10 @@ var itemSchema = new mongoose.Schema({
     shirt: Boolean,
     cap: Boolean
   },
+  sex:{
+    male: Boolean,
+    female: Boolean
+  }
   quantity:{
     type: Number,
     required: true
@@ -43,9 +47,23 @@ var itemSchema = new mongoose.Schema({
 
 itemSchema.plugin(uniqueValidator, {message: 'Ya hay un item con ese nombre'})
 
-itemSchema.statics.findByCredentials = function(name) {
+itemSchema.statics.findByCredentials = function(name){
     return new Promise(function(resolve, reject){
-        User.findOne({name}).then(function(item){
+      console.log("ALV AQUI ENTREEE \n", Item.findOne({name}));
+        Item.findOne({name}).then(function(item){
+            if(!item){
+              return reject('Item does not exist')
+            }
+            else {
+              return resolve(item)
+            }
+        })
+    })
+}
+
+itemSchema.statics.findByType = function(type){
+    return new Promise(function(resolve, reject){
+        Item.findOne({type}).then(function(item){
             if(!item){
               return reject('Item does not exist')
             }

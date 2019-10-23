@@ -3,11 +3,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/tienda.css">
     <link rel="stylesheet" href="./css/global.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>WoofShop</title>
+    <title>WoofShop | Tienda </title>
   </head>
 
   <body>
@@ -54,6 +54,7 @@
     <div id="section2" style="z-index: 5;">
       <section class="hero is-small-hero">
           <div class="columns" style="margin-top: auto; margin-bottom: auto;">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
             <div class="column is-4 is-text-align">
               <h1 class="is-logo title is-1 "> WoofShop</h1>
             </div>
@@ -86,83 +87,16 @@
     </section>
     </div>
 
-      <div id="sticky"></div>
+    <div id="sticky"></div>
 
-    <!-- pictures -->
-    <section class="hero is-light is-text-align">
-        <div class="columns is-marginless is-paddingles">
-          <div class="column is-paddingles" style="background: url(./img/men.jpg)">
-            <section class="hero is-paddingles is-marginless is-large">
-              <div class="hero-body">
-                <a class="button is-class" style=" background-color: rgba(255,255,255,0.7); letter-spacing: 1px; padding: 20px;">MEN</a>
-              </div>
-            </section>
-          </div>
-          <div class="column is-paddingles">
-            <section class="hero is-dark is-paddingles is-marginless is-large" style="background: url(./img/women.jpg)">
-              <div class="hero-body">
-                <a class="button is-class" style=" background-color: rgba(255,255,255,0.7); letter-spacing: 1px; padding: 20px;">WOMEN</a>
-              </div>
-            </section>
-          </div>
-        </div>
-        <section class="hero is-light is-paddingles is-marginless is-medium" style="background: url(./img/accesories.jpg)">
-          <div class="hero-body">
-            <a class="button is-class" style=" background-color: rgba(255,255,255,0.7); letter-spacing: 1px; padding: 20px;">ACCESSORIES</a>
-          </div>
-        </section>
-    </section>
-
-    <!-- Collection -->
-    <section class="hero is-dark is-medium is-text-align">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title is-season" style="color: #f28d00">
-            AUTUMN Collection
-          </h1>
-        </div>
-      </div>
-    </section>
-    <!-- woof -->
-    <section class="hero is-medium is-text-align">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="is-logo title">WoofShop</h1>
-          <h1 class="is-subtitle is-4">
-             Woofshop is meant to be a cloathing with an animal focus. We will donate a cuantity of the mechandise sold.
-             We look fowart to help homeless dogs by pairing up with supportive assosiations
-          </h1>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <section class="hero is-light">
-    <div class="hero-body">
-      <div class="container"><div class="container" style="margin-top: 30px; margin-bottom: 30px;">
-        <div class="columns">
-          <div class="column">
-            <h1 class="is-logo title is-4">WoofShop</h1>
-          </div>
-          <div class="column">
-            <h3 class="titleFooter has-text-grey-darker">Product</h3>
-            <p class="titleFooter has-text-grey"><a href">Features</a></p>
-          </div>
-          <div class="column">
-            <h3 class="titleFooter has-text-grey-darker">Platform</h3>
-            <p class="titleFooter has-text-grey"><a href="">Log in</a></p>
-            <p class="titleFooter has-text-grey"><a href">Sign Up</a></p>
-          </div>
-          <div class="column">
-            <h3 class="titleFooter has-text-grey-darker">Us</h3>
-            <p class="titleFooter has-text-grey"><a href="">About Us</a></p>
-          </div>
-        </div>
-      </div>
-      <h1 class="subtitle is-7 is-margineless" align="right"> Made with love <3</h1>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
     </div>
-  </section>
 
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/tienda.js"></script>
   </body>
 </html>

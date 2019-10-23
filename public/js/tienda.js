@@ -1,4 +1,3 @@
-/* ------ Funciones HTML ------ */
 $(function(){
   var stickyHeaderTop = $('#section2').offset().top;
     $(window).scroll(function(){
@@ -62,4 +61,10 @@ $( "#searchbar" ).hover(
   }
 );
 
-/* ------ Funciones para la BD ------ */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}

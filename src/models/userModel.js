@@ -71,7 +71,7 @@ userSchema.methods.toJSON = function() {
 
 userSchema.statics.findByCredentials = function(email, password) {
     return new Promise(function(resolve, reject){
-        User.findOne({email}).then(function(user){
+        User.findOne({email: email}).then(function(user){
             if(!user){
                 return reject('User does not exist')
             }
@@ -90,16 +90,12 @@ userSchema.statics.findByCredentials = function(email, password) {
 
 userSchema.methods.generateToken = function() {
     const user = this
-    console.log(user);
     const token = jwt.sign({ _id: user._id.toString() }, secret, { expiresIn: '3 days'})
     user.tokens = user.tokens.concat({ token })
     return new Promise(function( resolve, reject) {
-        console.log("enters promise");
         user.save().then(function(user){
-          console.log("enters then");
             return resolve(token)
         }).catch(function(error) {
-          console.log("catch error");
             return reject(error)
         })
     })
