@@ -34,7 +34,7 @@ var itemSchema = new mongoose.Schema({
   sex:{
     male: Boolean,
     female: Boolean
-  }
+  },
   quantity:{
     type: Number,
     required: true
