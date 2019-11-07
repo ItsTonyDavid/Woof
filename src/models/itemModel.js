@@ -29,9 +29,10 @@ var itemSchema = new mongoose.Schema({
   itemType:{
     hoodie: Boolean,
     shirt: Boolean,
-    cap: Boolean
+    longsleeves: Boolean,
+    accessorie: Boolean
   },
-  sex:{
+  gender:{
     male: Boolean,
     female: Boolean
   },

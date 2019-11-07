@@ -1,8 +1,4 @@
-.background1{
-  background: hsl(0, 0%, 71%);  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #d6d7db ,  #7a635e  );  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #d6d7db ,  #7a635e  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+
 /* opacity: background-color: rgba(0,0,0,.5);
 background: -webkit-linear-gradient(to bottom, #8F919D ,  #7a635e  );  /* Chrome 10-25, Safari 5.1-6 */
 /* background: linear-gradient(to bottom, #8F919D ,  #7a635e  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -79,7 +75,7 @@ background: -webkit-linear-gradient(to bottom, #8F919D ,  #7a635e  );  /* Chrome
 .input:focus{
   border-color: none;
   box-shadow: none;
-  border-bottom: 2px solid #604e4a;
+  border-bottom: 2px solid #b5b0af;
 }
 
 .is-title-form{
@@ -102,7 +98,7 @@ background: -webkit-linear-gradient(to bottom, #8F919D ,  #7a635e  );  /* Chrome
 }
 
 .button:active{
-  background-color: #604e4a;
+  background-color: #c9bfbd;
 }
 
 .button:hover{

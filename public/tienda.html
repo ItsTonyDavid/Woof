@@ -12,49 +12,10 @@
 
   <body>
 
-    <nav class="navbar is-opacity-dark" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarTop">
-          <span aria-hidden="true" style="color: white;"></span>
-          <span aria-hidden="true" style="color: white;"></span>
-          <span aria-hidden="true" style="color: white;"></span>
-        </a>
-      </div>
-      <div class="container">
-        <div id="navbarTop" class="navbar-menu" style="background-color:rgba(0,0,0,0)">
-          <div class="navbar-start">
-            <a id="searchbar" class="navbar-item notEfect">
-              <p class="control has-icons-left">
-                <input id="searchbarInput" class="input searchInput" type="search" placeholder="SEARCH...">
-                <span class="icon is-small is-left ">
-                  <i id="searchIcon" class="fas fa-search fa-xs"></i>
-                </span>
-              </p>
-            </a>
-          </div>
-
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <a id="signup" class="button is-transparent" href="./signup.html" style="width: 100%; padding-right: auto;">
-                <div class="" style="margin-left: 0px; margin-right:auto;">
-                  <span class="icon">
-                    <i id="usericon" class="fas fa-user fa-xs is-white"></i>
-                  </span>
-                  <span id="textsignin"class="is-small-text is-white ">SIGN IN</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-
     <!-- Second Navbar -->
     <div id="section2" style="z-index: 5;">
       <section class="hero is-small-hero">
           <div class="columns" style="margin-top: auto; margin-bottom: auto;">
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
             <div class="column is-4 is-text-align">
               <h1 class="is-logo title is-1 "> WoofShop</h1>
             </div>
@@ -63,16 +24,16 @@
                 <div class="column">
                   <div class="columns">
                     <div class="column is-text-align">
-                      <p class="is-montserrat-bold "> MEN </p>
+                      <p class="is-montserrat-bold "> HOMBRE </p>
                     </div>
                     <div class="column is-text-align">
-                      <p class="is-montserrat-bold "> WOMEN </p>
+                      <p class="is-montserrat-bold "> MUJER </p>
                     </div>
                     <div class="column is-text-align">
-                      <p class="is-montserrat-bold "> ACCESSORIES </p>
+                      <p class="is-montserrat-bold "> ACCESORIOS </p>
                     </div>
                     <div class="column is-text-align">
-                      <p class="is-montserrat-bold "> ALL </p>
+                      <p class="is-montserrat-bold "> TODO </p>
                     </div>
                   </div>
                 </div>
@@ -89,13 +50,167 @@
 
     <div id="sticky"></div>
 
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
-    </div>
+    <section class="hero">
+      <div class="hero-body is-filter-sidebar">
+        <div id="gender" class="is-gender-title">
+          <h2 class="title is-4 is-montserrat-bold">
+            HOMBRE
+          </h2>
+        </div>
+        <div class="columns">
+          <div id="sideFilterMenu"class="column is-2">
+            <div class="">
+              <div class="is-filter-title">
+                <h1>TIPO</h1>
+              </div>
+              <div class="">
+                <label class="checkbox">
+                  <input id="tshirt" type="checkbox" class="filter">
+                  T - SHIRT
+                </label>
+              </div>
+              <div class="">
+                <label class="checkbox">
+                  <input id="longsleeves" type="checkbox">
+                  MANGA LARGA
+                </label>
+              </div>
+              <div class="">
+                <label class="checkbox">
+                  <input id="hoodies" type="checkbox">
+                  SUDADERAS
+                </label>
+              </div>
+              <div class="">
+                <label class="checkbox">
+                  <input id="hoodies" type="checkbox">
+                  ACCESORIOS
+                </label>
+              </div>
+            </div>
+            <div class="">
+              <div class="is-filter-title">
+                <h1>TAMAÑO</h1>
+              </div>
+              <div class="">
+                <div class="">
+                  <label class="checkbox">
+                    <input id="xs" type="checkbox">
+                    XS
+                  </label>
+                </div>
+                <div class="">
+                  <label class="checkbox">
+                    <input id="s" type="checkbox">
+                    S
+                  </label>
+                </div>
+                <div class="">
+                  <label class="checkbox">
+                    <input id="m" type="checkbox">
+                    M
+                  </label>
+                </div>
+                <div class="">
+                  <label class="checkbox">
+                    <input id="l" type="checkbox">
+                    L
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+              <div class="columns">
+                <div class="column is-3">
+                  <div class="card" style="margin-left: 19px; margin-right: 19px;">
+                    <div class="card-image">
+                      <figure class="image is-3by4">
+                        <img src="https://bulma.io/images/placeholders/480x600.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div style="text-align:center;">
+                        <div class="">
+                          White Shirt
+                        </div>
+                        <br>
+                        <div class="">
+                          $250.00 MXN
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-3">
+                  <div class="card" style="margin-left: 19px; margin-right: 19px;">
+                    <div class="card-image">
+                      <figure class="image is-3by4">
+                        <img src="https://bulma.io/images/placeholders/480x600.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div style="text-align:center;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-3">
+                  <div class="card" style="margin-left: 19px; margin-right: 19px;">
+                    <div class="card-image">
+                      <figure class="image is-3by4">
+                        <img src="https://bulma.io/images/placeholders/480x600.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div style="text-align:center;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-3">
+                  <div class="card" style="margin-left: 19px; margin-right: 19px;">
+                    <div class="card-image">
+                      <figure class="image is-3by4">
+                        <img src="https://bulma.io/images/placeholders/480x600.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div style="text-align:center;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-3">
+                  <div class="card" style="margin-left: 19px; margin-right: 19px;">
+                    <div class="card-image">
+                      <figure class="image is-3by4">
+                        <img src="https://bulma.io/images/placeholders/480x600.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div style="text-align:center;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris.
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script type="text/javascript" src="js/tienda.js"></script>
   </body>

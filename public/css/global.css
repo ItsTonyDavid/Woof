@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Yellowtail&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Chelsea+Market|Permanent+Marker&display=swap');
 
 .is-logo{
   font-family: 'Yellowtail', cursive;
@@ -16,8 +16,16 @@
   font-weight: 800;
 }
 
-.is-hidden{
+.is-chalk{
+  font-family: 'Chelsea Market', cursive;
+}
 
+.is-market{
+  font-family: 'Permanent Marker', cursive;
+}
+
+.is-hidden{
+  display: none;
 }
 
 .is-opacity-dark{
@@ -154,4 +162,16 @@ a.navbar-item.notEfect:focus-within{
 
  .searchInput2:focus {
      border: 0px;
+  }
+
+  .background2{
+    background: hsl(0, 0%, 71%);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, white ,  #847977  );  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, white ,  #847977  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  .background1{
+    background: hsl(0, 0%, 71%);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, white ,  #dbd5d4  );  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, white ,  #dbd5d4  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
