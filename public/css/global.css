@@ -77,10 +77,6 @@ a.navbar-item.notEfect:focus-within{
   min-height: 0px;
 }
 
-.button{
-  border: 0px;
-}
-
 .nav .nav-toggle span {
     background-color: white;
 }
