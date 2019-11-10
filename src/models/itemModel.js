@@ -22,10 +22,16 @@ var itemSchema = new mongoose.Schema({
     data: Buffer,
     contentType: String
   },
-  size:{
-    type: String,
-    required: true
-  },
+  sizes:[{
+    size: {
+      type: String,
+      required: true
+    },
+    quantity: {
+      type: Number,
+      required: true
+    }
+  }],
   itemType:{
     hoodie: Boolean,
     shirt: Boolean,
@@ -35,10 +41,6 @@ var itemSchema = new mongoose.Schema({
   gender:{
     male: Boolean,
     female: Boolean
-  },
-  quantity:{
-    type: Number,
-    required: true
   },
   active:{
     type: Boolean,

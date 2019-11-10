@@ -21,7 +21,7 @@ const deleteItem = function(req, res){
 const updateItemAdmin = function(req, res){
   const _id = req.params.id
   const updates = Object.keys(req.body)
-  const allowedUpdates = ["price","quantity","active"]
+  const allowedUpdates = ["price","sizes","active"]
   const isValidUpdate = updates.every((update) => allowedUpdates.includes(update))
   if (!isValidUpdate){
     return res.status(400).send({
@@ -41,7 +41,7 @@ const updateItemAdmin = function(req, res){
 const updateItemUser = function(req, res){
   const _id = req.params.id
   const updates = Object.keys(req.body)
-  const allowedUpdates = ["quantity"]
+  const allowedUpdates = ["sizes"]
   const isValidUpdate = updates.every((update) => allowedUpdates.includes(update))
   if (!isValidUpdate){
     return res.status(400).send({
@@ -58,16 +58,45 @@ const updateItemUser = function(req, res){
   })
 }
 
-// const getItemByType(req,res){
-//   const type = req.params.type
-//
-// }
+const getAllItems = function(req, res){
+  Item.find({}, function(err, items){
+    if(!items){
+      return res.status(404).send()
+    }
+    var itemMap = {}
+
+    items.forEach(function(item){
+      itemMap[item._id] = item;
+    })
+    return res.send(itemMap)
+  })
+}
+
+const getItemsByGender = function(req, res){
+  const gndr = Object.keys(req.body.gender)
+  if (gndr == "male"){
+    Item.find({ gender: { male: true }}, function(err, items){
+      if(!items){
+        return res.status(404).send()
+      }
+      res.send(items)
+    })
+  } 
+  else if (gndr == "female"){
+    Item.find({ gender: { female: true }}, function(err, items){
+      if(!items){
+        return res.status(404).send()
+      }
+      res.send(items)
+    })
+  }
+}
 
 module.exports = {
   createItem: createItem,
   deleteItem: deleteItem,
   updateItemAdmin: updateItemAdmin,
-  updateItemUser: updateItemUser
+  updateItemUser: updateItemUser,
+  getAllItems: getAllItems,
+  getItemsByGender: getItemsByGender
 };
-
-//findOneAndRemove({ _id: id }, ...)
