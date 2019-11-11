@@ -24,8 +24,6 @@ $(function(){
     });
 });
 
-
-
 window.onresize = function(event){
   if($(window).width() <= 768){
     $('#section2').css({position: 'static', top: '0px'});
@@ -35,12 +33,11 @@ window.onresize = function(event){
 
 window.onload = function(){
   var gender = getUrlParameter('gender');
-  console.log(gender);
-  if(gender){
-    getItemsByGender(gender)
+  if(!gender){
+    getItems();
   }
   else{
-    getItems();
+    getItemsbyGender(gender)
   }
 }
 
@@ -87,50 +84,47 @@ function createItemCards(req){
 /* ------ Funciones para la DB ------ */
 //https://woofshop.herokuapp.com/
 function getItems(){
-  var promise = $.ajax({
-    url: 'https://woofshop.herokuapp.com/items',
-    headers: {
-        'Content-Type':'application/json'
-    },
-    method: 'GET',
-    dataType: 'json',
-    //data: json_to_send,
-    success: function(data){
-      console.log("OK getItems");
-    },
-    error: function(error_msg) {
-      console.log(error_msg);
-      var err = (error_msg.responseText)
-    }
-  });
-  $.when(promise).done(function(data){createItemCards(data)})
+    $.ajax({
+      url: 'http://localhost:3000/items',
+      headers: {
+          'Content-Type':'application/json'
+      },
+      method: 'GET',
+      success: function(data){
+        items = data;
+        createItemCards(data);
+      },
+      error: function(error_msg) {
+        var err = (error_msg.responseText)
+        console.log(err);
+      }
+    });
 }
 
-function getItemsByGender(gender){
-
-  json_to_send = {
-    "gender": gender
-  };
-
-  json_to_send = JSON.stringify(json_to_send);
-
-  var promise = $.ajax({
-    url: 'https://woofshop.herokuapp.com/itemsbygender',
+function getItemsbyGender(gender){
+  $.ajax({
+    url: 'http://localhost:3000/itemsbygender/' + gender,
     headers: {
         'Content-Type':'application/json'
     },
     method: 'GET',
-    dataType: 'json',
-    data: json_to_send,
     success: function(data){
-      console.log(data);
+      items = data
+      createItemCards(data);
     },
     error: function(error_msg) {
       console.log(error_msg);
-      var err = (error_msg.responseText)
+      console.log("Error:" + error_msg.status);
     }
-  });
-  $.when(promise).done(function(data){createItemCards(data)})
+  })
+}
+
+function getItemsbyType(types){
+
+}
+
+function getItemsbySize(sizes){
+  
 }
 
 /* ------ Otras funciones que ayudan al funcionamiento ------ */

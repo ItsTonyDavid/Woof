@@ -25,7 +25,7 @@ router.delete('/deleteItem', admin, item.deleteItem); //delete a item with its n
 router.patch('/updateItemAdmin/:id', admin, item.updateItemAdmin) //Update item admin
 router.patch('/updateItemUser/:id', auth, item.updateItemUser) //Update item user
 router.get('/items', item.getAllItems)//Get all items
-router.get('/itemsbygender', item.getItemsByGender) //Get items from a gender
+router.get('/itemsbygender/:gender', item.getItemsByGender) //Get items from a gender
 router.get('/itemById', item.getItemById)
 
 //ORDERS

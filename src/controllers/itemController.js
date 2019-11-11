@@ -68,7 +68,8 @@ const getAllItems = function(req, res){
 }
 
 const getItemsByGender = function(req, res){
-  const gndr = req.body.gender
+  const gndr = req.params.gender
+  console.log(gndr);
   if (gndr == "male"){
     Item.find({ gender: { male: true }}, function(err, items){
       if(!items){
