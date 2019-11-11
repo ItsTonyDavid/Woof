@@ -63,11 +63,7 @@ const getAllItems = function(req, res){
     if(!items){
       return res.status(404).send()
     }
-    var itemMap = {}
 
-    items.forEach(function(item){
-      itemMap[item._id] = item;
-    })
     return res.send(itemMap)
   })
 }
@@ -92,11 +88,22 @@ const getItemsByGender = function(req, res){
   }
 }
 
+const getItemById = function(req, res){
+  const id = req.body.id
+  Item.findOne({ _id: `${id}` }, function(err, item){
+    if(!item){
+      return res.status(404).send()
+    }
+    return res.send(item)
+  })
+}
+
 module.exports = {
   createItem: createItem,
   deleteItem: deleteItem,
   updateItemAdmin: updateItemAdmin,
   updateItemUser: updateItemUser,
   getAllItems: getAllItems,
-  getItemsByGender: getItemsByGender
+  getItemsByGender: getItemsByGender,
+  getItemById: getItemById
 };

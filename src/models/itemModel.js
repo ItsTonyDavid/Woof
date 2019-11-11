@@ -50,33 +50,6 @@ var itemSchema = new mongoose.Schema({
 
 itemSchema.plugin(uniqueValidator, {message: 'Ya hay un item con ese nombre'})
 
-itemSchema.statics.findByCredentials = function(name){
-    return new Promise(function(resolve, reject){
-      console.log("ALV AQUI ENTREEE \n", Item.findOne({name}));
-        Item.findOne({name}).then(function(item){
-            if(!item){
-              return reject('Item does not exist')
-            }
-            else {
-              return resolve(item)
-            }
-        })
-    })
-}
-
-itemSchema.statics.findByType = function(type){
-    return new Promise(function(resolve, reject){
-        Item.findOne({type}).then(function(item){
-            if(!item){
-              return reject('Item does not exist')
-            }
-            else {
-              return resolve(item)
-            }
-        })
-    })
-}
-
 const Item = mongoose.model('Item', itemSchema);
 
 module.exports = Item;

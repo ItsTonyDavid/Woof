@@ -18,8 +18,18 @@ var orderSchema = new mongoose.Schema({
     recibido: Boolean
   },
   products:[{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Item'
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Item'
+    },
+    size: {
+      type: String,
+      required: true
+    },
+    quantity: {
+      type: Number,
+      required: true
+    }
   }],
   user:{
     type: mongoose.Schema.Types.ObjectId,
@@ -28,6 +38,6 @@ var orderSchema = new mongoose.Schema({
   }
 })
 
-const Order = mongoose.model('Order', itemSchema);
+const Order = mongoose.model('Order', orderSchema);
 
 module.exports = Order;
