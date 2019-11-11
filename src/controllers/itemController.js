@@ -63,8 +63,7 @@ const getAllItems = function(req, res){
     if(!items){
       return res.status(404).send()
     }
-
-    return res.send(itemMap)
+    return res.send(items)
   })
 }
 
@@ -77,7 +76,7 @@ const getItemsByGender = function(req, res){
       }
       res.send(items)
     })
-  } 
+  }
   else if (gndr == "female"){
     Item.find({ gender: { female: true }}, function(err, items){
       if(!items){

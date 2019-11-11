@@ -17,29 +17,26 @@
       <section class="hero is-small-hero">
           <div class="columns" style="margin-top: auto; margin-bottom: auto;">
             <div class="column is-4 is-text-align">
-              <h1 class="is-logo title is-1 "> WoofShop</h1>
+              <h1 class="is-logo title is-1  "><a class="is-text-ref" href="./index.html"> WoofShop </a></h1>
             </div>
             <div class="column">
               <div class="columns is-little-padding">
                 <div class="column">
                   <div class="columns">
                     <div class="column is-text-align">
-                      <p class="is-montserrat-bold "> HOMBRE </p>
+                      <p class="is-montserrat-bold  "><a class="is-text-ref" href="./tienda.html?gender=male"> HOMBRE </a></p>
                     </div>
                     <div class="column is-text-align">
-                      <p class="is-montserrat-bold "> MUJER </p>
+                      <p class="is-montserrat-bold  "> <a class="is-text-ref" href="./tienda.html?gender=female"> MUJER </a> </p>
                     </div>
                     <div class="column is-text-align">
-                      <p class="is-montserrat-bold "> ACCESORIOS </p>
-                    </div>
-                    <div class="column is-text-align">
-                      <p class="is-montserrat-bold "> TODO </p>
+                      <p class="is-montserrat-bold  "> <a class="is-text-ref" href="./tienda.html"> TODO </a> </p>
                     </div>
                   </div>
                 </div>
                 <div class="column is-centered">
                   <figure class="image is-24x24 is-centered">
-                    <img class="is-img-center is-centered" src="./img/cart.png">
+                    <a href="./carrito.html"><img class="is-img-center is-centered" src="./img/cart.png"></a>
                   </figure>
                 </div>
               </div>
@@ -51,34 +48,74 @@
     <div id="sticky"></div>
 
     <section class="hero">
-      <div class="columns side-space">
-        <div class="column is-7 left-column">
-          <figure class="image is-item-img center-item"><img src="https://bulma.io/images/placeholders/64x64.png"></figure>
+      <div class="columns is-vcentered side-space is-item-div">
+        <div class="column is-half left-column is-column-img">
+          <figure class="image"><img src="https://http2.mlstatic.com/playeras-remate-luigi-mario-bros-nintendo-ninos-hombre-D_NQ_NP_661987-MLM31237460886_062019-F.webp"></figure>
         </div>
-        <div class="column is-text-align">
-          <div class="">
-            <h1 id="itemName" class="title is-3">Camisa Negra</h1>
-          </div>
-          <br>
-          <div class="price">
-            <h1 id="itemName" class="title is-5 ">$350.00 MXN</h1>
-          </div>
-          <br>
-          <div class="" style="margin: auto;">
-            <h2>ELIGE LA TALLA</h2>
-            <div class="" style="">
-                <button class="button is-next">XS</button>
-                <button class="button is-next">S</button>
-                <button class="button is-next">M</button>
-                <button class="button is-next">L</button>
+        <div class="column is-text-align" style="">
+          <div class="is-info-global" style="">
+            <div class="">
+              <h1 id="itemName" class="title is-3 item-name">Camisa Negra</h1>
             </div>
-          </div>
-          <div class="">
-            <button class="button add-to-cart">Agregar al carrito</button>
+            <br>
+            <div class="price">
+              <h1 id="itemName" class="title is-5 ">$350 MXN</h1>
+            </div>
+            <br class="item">
+            <div class="is-text-align">
+              <button id="size" class="button button-sizes">XS</button>
+              <button id="size" class="button button-sizes">S</button>
+              <button id="size" class="button button-sizes">M</button>
+              <button id="size" class="button button-sizes">L</button>
+            </div>
+            <br>
+            <div class="">
+              <button class="button add-to-cart"><strong>AGREGAR AL CARRITO</strong></button>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="hero">
+      <div class="hero-body is-text-align">
+        <div class="container">
+          <h2 class="subtitle is-6">
+            <strong> Por una buena causa </strong>
+          </h2>
+          <h2 class="subtitle is-6">
+            Comprando esta prenda ayudas a perritos callejeros a tener una mejor vida.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container"><div class="container" style="margin-top: 30px; margin-bottom: 30px;">
+        <div class="columns">
+          <div class="column">
+            <h1 class="is-logo title is-4">WoofShop</h1>
+          </div>
+          <div class="column">
+            <h3 class="titleFooter has-text-grey-darker">Product</h3>
+            <p class="titleFooter has-text-grey"><a href="">Features</a></p>
+          </div>
+          <div class="column">
+            <h3 class="titleFooter has-text-grey-darker">Platform</h3>
+            <p class="titleFooter has-text-grey"><a href="./login.html">Log in</a></p>
+            <p class="titleFooter has-text-grey"><a href="./signup.html">Sign Up</a></p>
+          </div>
+          <div class="column">
+            <h3 class="titleFooter has-text-grey-darker">Us</h3>
+            <p class="titleFooter has-text-grey"><a href="">About Us</a></p>
+          </div>
+        </div>
+      </div>
+      <h1 class="subtitle is-7 is-margineless" align="right"> Made with love <3</h1>
+    </div>
+  </section>
 
     <script type="text/javascript" src="js/item.js"></script>
   </body>

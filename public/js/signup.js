@@ -14,8 +14,7 @@ $( "#signup" ).click(function() {
     json_to_send = JSON.stringify(json_to_send);
 
     $.ajax({
-      //url: 'http://trackr-tec.herokuapp.com/users/login', // url: 'https://tuapp.herokuapp.com/users/login'
-      url: 'http://localhost:3000/createUser',
+      url: 'https://woofshop.herokuapp.com//createUser',
       headers: {
           'Content-Type':'application/json'
       },
@@ -30,7 +29,6 @@ $( "#signup" ).click(function() {
         json_to_send2 = JSON.stringify(json_to_send2);
         console.log(json_to_send2);
         $.ajax({
-          //url: 'http://trackr-tec.herokuapp.com/users/login', // url: 'https://tuapp.herokuapp.com/users/login'
           url: 'http://localhost:3000/login',
           headers: {
               'Content-Type':'application/json',
@@ -40,9 +38,8 @@ $( "#signup" ).click(function() {
           dataType: 'json',
           data: json_to_send2,
           success: function(data){
-            // guardar token en localstorage o cookie
             localStorage.setItem('token', data.token);
-            window.location = './index.html';
+            window.location = './tienda.html';
           },
           error: function(error_msg) {
             console.log(error_msg);

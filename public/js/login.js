@@ -10,8 +10,7 @@ $( "#login" ).click(function() {
   json_to_send = JSON.stringify(json_to_send);
 
   $.ajax({
-    //url: 'http://trackr-tec.herokuapp.com/users/login', // url: 'https://tuapp.herokuapp.com/users/login'
-    url: 'http://localhost:3000/login',
+    url: 'https://woofshop.herokuapp.com/login',
     headers: {
         'Content-Type':'application/json'
     },
@@ -19,13 +18,13 @@ $( "#login" ).click(function() {
     dataType: 'json',
     data: json_to_send,
     success: function(data){
-      console.log(data);
+      sessionStorage.setItem('token', data.token);
+      window.location = './tienda.html';
     },
     error: function(error_msg) {
       console.log(error_msg);
       var err = (error_msg.responseText)
     }
-
   });
 
   /* $.ajax({

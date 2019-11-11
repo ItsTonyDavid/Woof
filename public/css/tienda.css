@@ -126,3 +126,7 @@
 .is-check-place{
   margin-bottom: 20px;
 }
+
+.card{
+  cursor: pointer;
+}

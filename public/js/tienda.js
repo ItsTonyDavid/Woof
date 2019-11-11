@@ -1,3 +1,9 @@
+var token = sessionStorage.getItem('token'); //Guardar cookies
+if (token) {
+  token = token.replace(/^"(.*)"$/, '$1'); // Remove quotes from token start/end.
+}
+
+/* ------ Funciones HTML ------ */
 $(function(){
   var stickyHeaderTop = $('#section2').offset().top;
     $(window).scroll(function(){
@@ -17,54 +23,34 @@ $(function(){
     });
 });
 
+window.onload = function(){
+  getItems();
+}
+
 window.onresize = function(event){
   if($(window).width() <= 768){
     $('#section2').css({position: 'static', top: '0px'});
     $('#sticky').css('display', 'none');
   }
-};
-
-$(document).ready(function() {
-
-  $('.navbar-burger').on('click', function(e) {
-    e.preventDefault();
-
-    // Get the target from the "data-target" attribute
-    var target = $(this).data('target');
-    var $target = $('#' + target);
-
-    // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-    $(this).toggleClass('is-active');
-    $target.toggleClass('is-active');
-  });
-});
-
-$( "#signup" ).hover(
-  function() {
-    $("#usericon").css('color', 'hsl(0, 0%, 50%)');
-    $("#textsignin").css('color', 'hsl(0, 0%, 50%)');
-  }, function() {
-    $("#usericon").css('color', 'white');
-    $("#textsignin").css('color', 'white');
-  }
-);
-
-$( "#searchbar" ).hover(
-  function() {
-    $("#searchIcon").css('color', 'hsl(0, 0%, 50%)');
-    $("#searchbarInput").addClass('searchInput2')
-    $("#searchbarInput").removeClass('searchInput')
-  }, function() {
-    $("#searchIcon").css('color', 'white');
-    $("#searchbarInput").removeClass('searchInput2')
-    $("#searchbarInput").addClass('searchInput')
-  }
-);
-
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
 }
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
+/* ------ Funciones para la DB ------ */
+//https://woofshop.herokuapp.com/
+function getItems(){
+  $.ajax({
+    url: 'https://woofshop.herokuapp.com/items',
+    headers: {
+        'Content-Type':'application/json'
+    },
+    method: 'GET',
+    dataType: 'json',
+    //data: json_to_send,
+    success: function(data){
+      console.log(data);
+    },
+    error: function(error_msg) {
+      console.log(error_msg);
+      var err = (error_msg.responseText)
+    }
+  });
 }
