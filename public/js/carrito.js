@@ -52,9 +52,8 @@ $(document).ready(function() {
 
 function updateTicket(){
   getNumItems()
-  $("#subtotal").html(numItems + " ITEMS \t")
+  $("#subtotal").html(numItems + "ITEMS ")
   $("#subtotal-price").html("$" + precioTotal)
-
   $("#total").html("$" + precioTotal)
 }
 
