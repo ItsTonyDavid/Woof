@@ -116,6 +116,9 @@ $("#carrito").click(function(){
       localStorage.setItem("item" + (count+1), JSON.stringify(itemInPage));
     }
   }
+  else {
+    $("#nosize").text("Debes seleccionar una talla")
+  }
 })
 
 function addToCarrito2(){
