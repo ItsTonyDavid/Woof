@@ -38,7 +38,7 @@ $( "#signup" ).click(function() {
           dataType: 'json',
           data: json_to_send2,
           success: function(data){
-            localStorage.setItem('token', data.token);
+            sessionStorage.setItem('token', data.token);
             window.location = './tienda.html';
           },
           error: function(error_msg) {

@@ -46,8 +46,8 @@
 .price{
   border-bottom: 1px solid #000;
   padding-bottom: 3px;
-  margin-left: 40%;
-  margin-right: 40%;
+  margin-left: 35%;
+  margin-right: 35%;
   text-align: center;
 }
 
@@ -126,4 +126,8 @@
 
 .is-column-img{
   margin-top: 30px;
+}
+
+.notAvailable{
+  
 }

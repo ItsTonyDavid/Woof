@@ -63,68 +63,65 @@
       </div>
 
       <div class="columns">
-        <div class="column is-8">
-          <div class="params">
-            <div class="columns">
-              <div class="column is-7 is-offset-1">
-                <h1>PRODUCTO</h1>
-              </div>
-              <div class="column is-2">
-                <h1>CANTIDAD</h1>
-              </div>
-              <div class="column is-2">
-                <h1>PRECIO</h1>
-              </div>
+        <div class="column is-8 glosario">
+          <div class="columns is-multiline is-mobile is-vcentered">
+            <div class="column is-2">
+              <p class=""> PRODUCTO <p>
             </div>
+            <div class="column is-4">
+            </div>
+            <div class="column is-2">
+              CANTIDAD
+            </div>
+            <div class="column is-2">
+              PRECIO
+            </div>
+            <div class="column is-2">
+
+            </div>
+            <hr>
           </div>
-          <hr>
-          <div id="producto1" class="">
-            <div class="columns">
-              <div class="column is-7 is-offset-1">
-                <h1>PRODUCTO</h1>
-              </div>
-              <div class="column is-2">
-                <h1>CANTIDAD</h1>
-              </div>
-              <div class="column is-2">
-                <h1>PRECIO</h1>
-              </div>
-            </div>
-          </div>
-          <div id="producto2" class="">
-            <div class="columns">
-              <div class="column is-7 is-offset-1">
-                <h1>PRODUCTO</h1>
-              </div>
-              <div class="column is-2">
-                <h1>CANTIDAD</h1>
-              </div>
-              <div class="column is-2">
-                <h1>PRECIO</h1>
-              </div>
-            </div>
+          <div id="carritoItems" class="">
+
           </div>
         </div>
-        <div class="column">
+        <div class="column is-3 is-offset-1">
           <div class="ticket">
-            <div class="is-text-align">
+            <div class="is-text-align ticket-title">
               RESUMEN
             </div>
             <hr class="hr-ticket">
-            <div class="">
-              SUBTOTAL
+            <div class="ticket-row">
+              <div class="columns is-multiline is-mobile is-vcentered">
+                <div class="column">
+                  <p class="ticket-subtitle"> SUBTOTAL </p>
+                  <p id="subtotal" class="ticket-subtitle-extra">  </p>
+                </div>
+                <div class="column">
+                  <p id="subtotal-price" class="ticket-subtitle-extra" style="margin-top: -10px;">  </p>
+                </div>
+              </div>
             </div>
             <hr class="hr-ticket">
-            <div class="">
-              ENVIO
+            <div class="ticket-row">
+              <p class="ticket-subtitle"> ENVIO </p>
+              <p class="ticket-subtitle-extra"> Envio ya está incluido. </p>
             </div>
             <hr class="hr-ticket">
-            <div class="">
-              TOTAL
+            <div class="ticket-row">
+              <div class="columns is-multiline is-mobile">
+                <div class="column">
+                  <p class="ticket-subtitle"> TOTAL </p>
+                </div>
+                <div class="column">
+                  <p id="total" class="ticket-subtitle-extra">  </p>
+                </div>
+              </div>
             </div>
+            <hr class="hr-ticket">
           </div>
           <div class="is-text-align">
-            <a class="button"> REALIZAR PAGO</a>
+            <a class="button checkout"> REALIZAR PAGO</a>
           </div>
         </div>
       </div>

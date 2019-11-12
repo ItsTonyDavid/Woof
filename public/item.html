@@ -55,22 +55,22 @@
         <div class="column is-text-align" style="">
           <div class="is-info-global" style="">
             <div class="">
-              <h1 id="itemName" class="title is-3 item-name">Camisa Negra</h1>
+              <h1 id="name" class="title is-3 item-name"></h1>
             </div>
             <br>
             <div class="price">
-              <h1 id="itemName" class="title is-5 ">$350 MXN</h1>
+              <h1 id="price" class="title is-5 ">$350 MXN</h1>
             </div>
             <br class="item">
             <div class="is-text-align">
-              <button id="size" class="button button-sizes">XS</button>
-              <button id="size" class="button button-sizes">S</button>
-              <button id="size" class="button button-sizes">M</button>
-              <button id="size" class="button button-sizes">L</button>
+              <button id="xs" class="button button-sizes">XS</button>
+              <button id="s" class="button button-sizes">S</button>
+              <button id="m" class="button button-sizes">M</button>
+              <button id="l" class="button button-sizes">L</button>
             </div>
             <br>
             <div class="">
-              <button class="button add-to-cart"><strong>AGREGAR AL CARRITO</strong></button>
+              <button id="carrito" class="button add-to-cart"><strong>AGREGAR AL CARRITO</strong></button>
             </div>
           </div>
         </div>
@@ -116,6 +116,19 @@
       <h1 class="subtitle is-7 is-margineless" align="right"> Made with love <3</h1>
     </div>
   </section>
+
+  <div id="carritoModal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <section class="modal-card-body">
+        <p>Ya has guardado este articulo anteriormente. Quieres volver a agregarlo?</p>
+      </section>
+      <footer class="modal-card-foot">
+        <button id="confirmAddToCart" class="button is-success">Save changes</button>
+        <button id="cancelAddToCart"class="button">Cancel</button>
+      </footer>
+    </div>
+  </div>
 
     <script type="text/javascript" src="js/item.js"></script>
   </body>

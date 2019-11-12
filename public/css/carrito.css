@@ -29,10 +29,40 @@
 }
 
 .ticket-title{
+  font-weight: bold;
+}
 
+.ticket-subtitle{
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.ticket-subtitle-extra{
+  font-size: 12px;
+}
+
+.ticket-row{
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .ticket-checkout{
   margin-left: auto;
   margin-right: auto;
+}
+
+.glosario{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.is-text-align{
+  text-align: center;
+}
+
+.checkout{
+  margin-top: 25px;
+  font-size: 18px;
+  background-color: #346408;
+  color: white;
 }
