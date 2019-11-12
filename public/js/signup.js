@@ -14,7 +14,7 @@ $( "#signup" ).click(function() {
     json_to_send = JSON.stringify(json_to_send);
 
     $.ajax({
-      url: 'https://woofshop.herokuapp.com//createUser',
+      url: 'https://woofshop.herokuapp.com/createUser',
       headers: {
           'Content-Type':'application/json'
       },

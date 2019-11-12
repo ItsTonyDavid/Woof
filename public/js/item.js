@@ -86,11 +86,9 @@ window.onload = function(){
 }
 
 function getItemById(id){
-  json_to_send = {"id" : id}
-  json_to_send = JSON.stringify(json_to_send);
 
   $.ajax({
-    url: 'https://woofshop.herokuapp.com/itemById',
+    url: 'https://woofshop.herokuapp.com/itemById/' + id,
     headers: {
         'Content-Type':'application/json'
     },

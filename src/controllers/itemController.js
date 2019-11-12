@@ -89,8 +89,8 @@ const getItemsByGender = function(req, res){
 }
 
 const getItemById = function(req, res){
-  const id = req.body.id
-  Item.findOne({ _id: `${id}` }, function(err, item){
+  const id = req.params.id
+  Item.findOne({ _id: id }, function(err, item){
     if(!item){
       return res.status(404).send()
     }
