@@ -96,6 +96,11 @@
   background-color: white;
   border: solid rgba(0,0,0,0.5);
   border-width: 0.8px;
+  display: block;
+}
+
+.is-transparent{
+  background-color: rgba(0,0,0,0);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -107,7 +112,7 @@
 
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
-  display: block;
+  display: inline;
 }
 
 /* Style the checkmark/indicator */
@@ -130,3 +135,5 @@
 .card{
   cursor: pointer;
 }
+
+.true{}

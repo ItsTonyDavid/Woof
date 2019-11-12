@@ -26,7 +26,7 @@ router.patch('/updateItemAdmin/:id', admin, item.updateItemAdmin) //Update item 
 router.patch('/updateItemUser/:id', auth, item.updateItemUser) //Update item user
 router.get('/items', item.getAllItems)//Get all items
 router.get('/itemsbygender/:gender', item.getItemsByGender) //Get items from a gender
-router.get('/itemById', item.getItemById)
+router.get('/itemById/:id', item.getItemById)
 
 //ORDERS
 router.post('/createOrder', auth, order.createOrder)//Create a new order

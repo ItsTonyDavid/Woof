@@ -80,4 +80,44 @@ $(document).on("click","#size", function () {
   $(this).toggleClass("button-actived");
 });
 
-$(".is-vertical-center").height($("#left-side").height())
+window.onload = function(){
+  var id = getUrlParameter('id');
+  getItemById(id);
+}
+
+function getItemById(id){
+  json_to_send = {"id" : id}
+  json_to_send = JSON.stringify(json_to_send);
+
+  $.ajax({
+    url: 'https://woofshop.herokuapp.com/itemById',
+    headers: {
+        'Content-Type':'application/json'
+    },
+    method: 'GET',
+    data: json_to_send,
+    dataType: 'json',
+    success: function(data){
+      console.log(data);
+    },
+    error: function(error_msg) {
+      console.log(error_msg);
+      console.log("Error:" + error_msg.status);
+    }
+  })
+}
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};

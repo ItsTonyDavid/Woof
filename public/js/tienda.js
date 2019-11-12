@@ -2,7 +2,7 @@ var token = sessionStorage.getItem('token'); //Guardar cookies
 if (token) {
   token = token.replace(/^"(.*)"$/, '$1'); // Remove quotes from token start/end.
 }
-var items = []
+var itemsFromData = []
 
 /* ------ Funciones HTML ------ */
 $(function(){
@@ -32,6 +32,8 @@ window.onresize = function(event){
 }
 
 window.onload = function(){
+  getCheckFilters()
+
   var gender = getUrlParameter('gender');
   if(!gender){
     getItems();
@@ -39,6 +41,12 @@ window.onload = function(){
   else{
     getItemsbyGender(gender)
   }
+
+  if(!gender){ gender = "TODO"}
+  if(gender == "female"){ gender = "MUJER"}
+  if(gender == "male"){ gender = "HOMBRE"}
+
+  $("#gender").html(gender)
 }
 
 function createItemCards(req){
@@ -51,7 +59,7 @@ function createItemCards(req){
       html += '<div class="columns">'
     }
     html += '<div class="column is-3">'
-      html += '<div class="card" style="margin-left: 19px; margin-right: 19px;">'
+      html += '<div id="' + items[i]._id + '" class="card is-transparent" style="margin-left: 19px; margin-right: 19px;" onclick="openItemPage(\''+ items[i]._id +'\')">'
         html += '<div class="card-image">'
           html += '<figure class="image is-3by4">'
             html += '<img src="'
@@ -81,18 +89,246 @@ function createItemCards(req){
   $(html).appendTo("#card-items");
 }
 
+function openItemPage(id){
+  window.location.href = "./item.html?id=" + id;
+}
+
+function getCheckFilters(){
+
+  if( $('#shirt').prop('checked') ) {
+    typeFilters['shirt'] = true
+  }
+  else{
+    typeFilters['shirt'] = false
+  }
+
+  if( $('#longsleeves').prop('checked') ) {
+    typeFilters['longsleeves'] = true
+  }
+  else{
+    typeFilters['longsleeves'] = false
+  }
+
+  if( $('#hoodie').prop('checked') ) {
+    typeFilters['hoodie'] = true
+  }
+  else{
+    typeFilters['hoodie'] = false
+  }
+
+  if( $('#accessorie').prop('checked') ) {
+    typeFilters['accessorie'] = true
+  }
+  else{
+    typeFilters['accessorie'] = false
+  }
+
+  if( $('#xs').prop('checked') ) {
+    sizeFilters['xs'] = true
+  }
+  else{
+    sizeFilters['xs'] = false
+  }
+
+  if( $('#s').prop('checked') ) {
+    sizeFilters['s'] = true
+  }
+  else{
+    sizeFilters['s'] = false
+  }
+
+  if( $('#m').prop('checked') ) {
+    sizeFilters['m'] = true
+  }
+  else{
+    sizeFilters['m'] = false
+  }
+
+  if( $('#l').prop('checked') ) {
+    sizeFilters['l'] = true
+  }
+  else{
+    sizeFilters['l'] = false
+  }
+}
+
+function getItemType(item){
+  if (item.itemType.shirt == true) return "shirt"
+  if (item.itemType.longsleeves == true) return "longsleeves"
+  if (item.itemType.hoodie == true) return "hoodie"
+  if (item.itemType.accessorie == true) return "accessorie"
+}
+
+function getItemSize(item){
+  sizes = []
+  for(i in item.sizes){
+    if(item.sizes[i].quantity > 0){
+      sizes.push(item.sizes[i].size)
+    }
+  }
+  return sizes
+}
+
+function getItemsbyType(items){
+  filterItems = []
+  noOneCheked = true;
+  for (i in items){
+    itemtype = getItemType(items[i])
+    for (type in typeFilters){
+      if(typeFilters[type] == true){
+        noOneCheked = false
+        if (type == itemtype){
+          filterItems.push(items[i])
+        }
+      }
+    }
+  }
+  if(noOneCheked){
+    return items
+  }
+  return filterItems
+}
+
+function getItemsbySize(items){
+  filterItems = []
+  noOneCheked = true;
+  ids = {}
+  for (size in sizeFilters){
+    if (sizeFilters[size] == true){
+      noOneCheked = false
+      for (count in items){
+        itemSize = getItemSize(items[count])
+        id = items[count]._id
+        for (j in itemSize){
+          if(size == itemSize[j] && ids[id] != id){
+            ids[id] = id
+            filterItems.push(items[count])
+          }
+        }
+      }
+    }
+  }
+  if(noOneCheked){
+    return items
+  }
+  return filterItems
+}
+
+function getItemsWithFilter(items){
+  filterItems = getItemsbyType(items)
+  filterItems = getItemsbySize(filterItems)
+
+  return filterItems
+}
+
+/* ------ Filtros ------ */
+
+var typeFilters = {
+  shirt: true,
+  longsleeves: true,
+  hoodie: true,
+  accessorie: true
+}
+
+var sizeFilters = {
+  xs: true,
+  s: true,
+  m: true,
+  l: true
+}
+
+$("#shirt").click(function() {
+  if( $('#shirt').prop('checked') ) {
+    typeFilters['shirt'] = true
+  }
+  else{
+    typeFilters['shirt'] = false
+  }
+  createItemCards(getItemsWithFilter(itemsFromData));
+});
+
+$("#longsleeves").click(function() {
+  if( $('#longsleeves').prop('checked') ) {
+    typeFilters['longsleeves'] = true
+  }
+  else{
+    typeFilters['longsleeves'] = false
+  }
+  createItemCards(getItemsWithFilter(itemsFromData));
+});
+
+$("#hoodie").click(function() {
+  if( $('#hoodie').prop('checked') ) {
+    typeFilters['hoodie'] = true
+  }
+  else{
+    typeFilters['hoodie'] = false
+  }
+  createItemCards(getItemsWithFilter(itemsFromData));
+});
+
+$("#accessorie").click(function() {
+  if( $('#accessorie').prop('checked') ) {
+    typeFilters['accessorie'] = true
+  }
+  else{
+    typeFilters['accessorie'] = false
+  }
+  createItemCards(getItemsWithFilter(itemsFromData));
+});
+
+$("#xs").click(function() {
+  if( $('#xs').prop('checked') ) {
+    sizeFilters['xs'] = true
+  }
+  else{
+    sizeFilters['xs'] = false
+  }
+  createItemCards(getItemsWithFilter(itemsFromData));
+});
+
+$("#s").click(function() {
+  if( $('#s').prop('checked') ) {
+    sizeFilters['s'] = true
+  }
+  else{
+    sizeFilters['s'] = false
+  }
+  createItemCards(getItemsWithFilter(itemsFromData));
+});
+
+$("#m").click(function() {
+  if( $('#m').prop('checked') ) {
+    sizeFilters['m'] = true
+  }
+  else{
+    sizeFilters['m'] = false
+  }
+  createItemCards(getItemsWithFilter(itemsFromData));
+});
+
+$("#l").click(function() {
+  if( $('#l').prop('checked') ) {
+    sizeFilters['l'] = true
+  }
+  else{
+    sizeFilters['l'] = false
+  }
+  createItemCards(getItemsWithFilter(itemsFromData));
+});
+
 /* ------ Funciones para la DB ------ */
 //https://woofshop.herokuapp.com/
 function getItems(){
     $.ajax({
-      url: 'http://localhost:3000/items',
+      url: 'https://woofshop.herokuapp.com/items',
       headers: {
           'Content-Type':'application/json'
       },
       method: 'GET',
       success: function(data){
-        items = data;
-        createItemCards(data);
+        itemsFromData = data
+        createItemCards(getItemsWithFilter(data));
       },
       error: function(error_msg) {
         var err = (error_msg.responseText)
@@ -103,28 +339,20 @@ function getItems(){
 
 function getItemsbyGender(gender){
   $.ajax({
-    url: 'http://localhost:3000/itemsbygender/' + gender,
+    url: 'https://woofshop.herokuapp.com/itemsbygender/' + gender,
     headers: {
         'Content-Type':'application/json'
     },
     method: 'GET',
     success: function(data){
-      items = data
-      createItemCards(data);
+      itemsFromData = data
+      createItemCards(getItemsWithFilter(data));
     },
     error: function(error_msg) {
       console.log(error_msg);
       console.log("Error:" + error_msg.status);
     }
   })
-}
-
-function getItemsbyType(types){
-
-}
-
-function getItemsbySize(sizes){
-  
 }
 
 /* ------ Otras funciones que ayudan al funcionamiento ------ */
@@ -143,3 +371,47 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
+function styler(element) {
+    function getElements() {
+        if (element instanceof HTMLElement) {
+            return [element];
+        } else if (typeof element === 'string') {
+            return document.querySelectorAll(element)
+        }
+        return [];
+    }
+    return {
+        get(styles) {
+            if (!Array.isArray(styles)) {
+                throw new Error('Second parameter of this function should be an array');
+            }
+            let elems = getElements();
+            if (elems.length === 0) {
+                return false;
+            }
+            let elem = elems[0];
+            let obj = {};
+            if (elem instanceof HTMLElement && styles) {
+                styles.map((style) => obj[style] = window.getComputedStyle(elem, null).getPropertyValue(style));
+                return obj;
+            }
+        },
+        set(styles) {
+            if (typeof styles !== 'object') {
+                throw new Error('Second parameter of this function should be an object');
+            }
+            let elems = getElements();
+            if (elems.length === 0) {
+                return false;
+            }
+            elems.forEach(function(elem) {
+                for (let i in styles) {
+                    if (styles.hasOwnProperty(i)) {
+                        elem.style[i] = styles[i];
+                    }
+                }
+            });
+        }
+    }
+}
