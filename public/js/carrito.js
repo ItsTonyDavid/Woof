@@ -50,19 +50,20 @@ $(document).ready(function() {
   });
 });
 
-function getNumItems(){
+function updateTicket(){
+  getNumItems()
   $("#subtotal").html(numItems + " ITEMS \t")
   $("#subtotal-price").html("$" + precioTotal)
 
-  $("#total").html(numItems + " ITEMS \t" + "$" + precioTotal)
+  $("#total").html("$" + precioTotal)
 }
 
 function removeItem(key){
   console.log(key);
   localStorage.removeItem(key);
   precioTotal = 0.00;
+  getNumItems()
   createItemTable()
-  numItems = numItems - 1
 }
 
 function createItemTable(){
@@ -98,7 +99,7 @@ function createItemTable(){
     html += '</div>'
   }
   $(html).appendTo("#carritoItems");
-  getNumItems()
+  updateTicket()
 }
 
 function getCarritoItems(){
@@ -108,8 +109,20 @@ function getCarritoItems(){
       return items
     }
     if(key != "count"){
-      numItems = numItems + 1;
       items[key]= JSON.parse(localStorage.getItem(key));
+    }
+  }
+}
+
+function getNumItems(){
+  numItems = 0
+  for (var key in localStorage){
+    if(key == "key"){
+      return ;
+    }
+    if(key != "count"){
+      console.log("numberItems", numItems);
+      numItems = numItems+1
     }
   }
 }
