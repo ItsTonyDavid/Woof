@@ -95,6 +95,7 @@ $("#cancelAddToCart").click(function(){
 $("#carrito").click(function(){
   var sizeId = $(".button-actived").attr('id')
   if(sizeId != undefined){
+    $("#nosize").empty()
     itemInPage.sizeOrder = sizeId
     if(localStorage.getItem("item1") == null){
       localStorage.setItem("count", 1);
