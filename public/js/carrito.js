@@ -4,7 +4,6 @@ if (token) {
 }
 var numItems = 0;
 var precioTotal = 0.00;
-
 /* ------ Funciones HTML ------ */
 $(function(){
   var stickyHeaderTop = $('#section2').offset().top;
@@ -33,6 +32,7 @@ window.onresize = function(event){
 };
 
 window.onload = function(){
+  precioTotal = 0.00;
   createItemTable()
 }
 
