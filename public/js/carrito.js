@@ -72,6 +72,7 @@ function createItemTable(){
   html = ""
    for(i in items){
      console.log(items[i].price);
+     console.log(precioTotal);
      precioTotal = precioTotal + items[i].price
     html += '<div id="'+ (i) +'" class="columns is-multiline is-mobile is-vcentered">'
       html += '<div class="column is-2">'
