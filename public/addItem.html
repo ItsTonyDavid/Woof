@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="dropdown navigation">
+      <div class="navbar-menu">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <h1 class="is-title is-logo" style="color: white;"> Woofshop.</h1>
+          </a>
+
+        </div>
+        <div class="navbar-end">
+        </div>
+    </nav>
+
+    <section class="hero is-light">
+      <div class="hero-body">
+        <div class="container">
+          <a class="button is-dark" href="">Regresar</a>
+          <div class="columns">
+            <div class="column is-8 is-offset-2 ">
+              <h1 class="title is-3">
+                Agregar producto.
+              </h1>
+            </div>
+          </div>
+          <div name="itemName">
+            <div class="columns">
+              <div class="column is-8 is-offset-2 ">
+                <h2 class="title is-4">
+                  Nombre del producto.
+                </h2>
+                <h2 class="title is-6 has-text-grey">
+                  Este es el nombre del producto. No puede haber nombres iguales
+                </h2>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-6 is-offset-2 ">
+                <input id="itemname" class="input" type="text" placeholder="i.e. Camisa negra hombre">
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div name="tipo">
+            <div class="columns">
+              <div class="column is-8 is-offset-2 ">
+                <h2 class="title is-4">
+                  Genero
+                </h2>
+                <h2 class="title is-6 has-text-grey">
+                  Selecionar el tipo de producto.
+                </h2>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-6 is-offset-2 ">
+                <div class="control">
+                  <label class="radio">
+                    <input id="itemmale" type="radio" name="answer">
+                    Hombre
+                  </label>
+                  <label class="radio">
+                    <input id="itemfemale" type="radio" name="answer">
+                    Mujer
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div name="price">
+            <div class="columns">
+              <div class="column is-8 is-offset-2 ">
+                <h2 class="title is-4">
+                  Precio
+                </h2>
+                <h2 class="title is-6 has-text-grey">
+                  Precio del producto. No se necesita poner $ ni MXN
+                </h2>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-6 is-offset-2 ">
+                <input id="itemprice" class="input" type="text" placeholder="i.e. 250">
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div name="tipo">
+            <div class="columns">
+              <div class="column is-8 is-offset-2 ">
+                <h2 class="title is-4">
+                  Tipo
+                </h2>
+                <h2 class="title is-6 has-text-grey">
+                  Selecionar el tipo de producto.
+                </h2>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-6 is-offset-2 ">
+                <div class="control">
+                  <label class="radio">
+                    <input id="itemcamisa" type="radio" name="answer">
+                    Camisa
+                  </label>
+                  <label class="radio">
+                    <input id="itemlongsleeve" type="radio" name="answer">
+                    Manga Larga
+                  </label>
+                  <label class="radio">
+                    <input id="itemhoodie" type="radio" name="answer">
+                    Hoodie
+                  </label>
+                  <label class="radio">
+                    <input id="itemaccesorio" type="radio" name="answer">
+                    Accesorio
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div name="tallas">
+            <div class="columns">
+              <div class="column is-8 is-offset-2 ">
+                <h2 class="title is-4">
+                  Tallas
+                </h2>
+                <h2 class="title is-6 has-text-grey">
+                  Poner la cantidad de tallas disponibles por producto.
+                </h2>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-6 is-offset-2 ">
+                <div class="columns">
+                  <div class="column is-2">
+                    <h2 class="title is-6" style="margin-bottom: 0px;">XS:</h2>
+                    <input id="itemxs" class="input" type="text" placeholder="i.e. 10">
+                  </div>
+                  <div class="column is-2">
+                    <h2 class="title is-6" style="margin-bottom: 0px;">S:</h2>
+                    <input id="items" class="input" type="text" placeholder="i.e. 10">
+                  </div>
+                  <div class="column is-2">
+                    <h2 class="title is-6" style="margin-bottom: 0px;">M:</h2>
+                    <input id="itemm" class="input" type="text" placeholder="i.e. 10">
+                  </div>
+                  <div class="column is-2">
+                    <h2 class="title is-6" style="margin-bottom: 0px;">L:</h2>
+                    <input id="iteml" class="input" type="text" placeholder="i.e. 10">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div name="itemName">
+            <div class="columns">
+              <div class="column is-8 is-offset-2 ">
+                <h2 class="title is-4">
+                  Imagen del producto
+                </h2>
+                <h2 class="title is-6 has-text-grey">
+                  Selecciona una fotografia del producto.
+                </h2>
+              </div>
+            </div>
+            <br>
+            <br>
+            <div class="columns">
+              <div class="column is-6 is-offset-2 ">
+                <div class="file">
+                  <label class="file-label">
+                    <input id="itempic" class="file-input" type="file" name="resume">
+                    <span class="file-cta">
+                      <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                      </span>
+                      <span class="file-label">
+                        Selecciona un archivo.
+                      </span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div name="confirmation">
+            <div class="columns">
+              <div class="column is-8 is-offset-2">
+                <div class="right">
+                  <br />
+                  <a class="button">Cancelar</a>
+                  <a onclick="addProduct()" class="button is-success">Agregar producto</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="js/addItem.js"></script>
+  </body>
+</html>

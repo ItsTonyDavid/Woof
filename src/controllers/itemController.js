@@ -1,4 +1,5 @@
 const Item = require('../models/itemModel.js');
+var multer = require('multer');
 
 const createItem = function(req, res){
   const item = new Item(req.body)
