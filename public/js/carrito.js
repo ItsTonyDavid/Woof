@@ -67,6 +67,7 @@ function removeItem(key){
 
 function createItemTable(){
   items = getCarritoItems()
+  console.log(items);
   $("#carritoItems").empty()
   html = ""
    for(i in items){

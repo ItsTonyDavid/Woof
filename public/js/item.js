@@ -150,7 +150,7 @@ function blockSizes(sizes){
 
 function getItem(item){
   $("#name").html(item.name)
-  $("#price").html("$" + item.price + " MXN")
+  $("#price").html("$" + item.price.toString() + " MXN")
   blockSizes(item.sizes)
 }
 
