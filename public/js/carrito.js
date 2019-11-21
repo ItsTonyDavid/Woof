@@ -71,13 +71,11 @@ function createItemTable(){
   $("#carritoItems").empty()
   html = ""
    for(i in items){
-     console.log(items[i].price);
-     console.log(precioTotal);
      precioTotal = precioTotal + items[i].price
     html += '<div id="'+ (i) +'" class="columns is-multiline is-mobile is-vcentered">'
       html += '<div class="column is-2">'
         html += '<figure class="image is-48x48">'
-          html += '<img src="https://bulma.io/images/placeholders/96x96.png">'
+          html += '<img src="'+ items[i].img + '">'
         html += '</figure>'
       html += '</div>'
       html += '<div class="column is-4">'
