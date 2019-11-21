@@ -150,6 +150,7 @@ function blockSizes(sizes){
 
 function getItem(item){
   $("#name").html(item.name)
+  document.getElementById('itempic').setAttribute("src", item.img)
   $("#price").html("$" + item.price.toString() + " MXN")
   blockSizes(item.sizes)
 }
