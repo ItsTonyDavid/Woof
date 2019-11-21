@@ -54,7 +54,7 @@ function updateTicket(){
   getNumItems()
   $("#subtotal").html(numItems + "ITEMS ")
   $("#subtotal-price").html("$" + precioTotal)
-  $("#total").html("$" + precioTotal)
+  $("#total").html(precioTotal)
 }
 
 function removeItem(key){
@@ -110,7 +110,7 @@ function getCarritoItems(){
     if(key == "key"){
       return items
     }
-    if(key != "count"){
+    if(key.includes("item")){
       items[key]= JSON.parse(localStorage.getItem(key));
     }
   }

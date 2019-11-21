@@ -2,6 +2,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel="stylesheet" href="./css/carrito.css">
     <link rel="stylesheet" href="./css/global.css">
@@ -121,7 +123,48 @@
             <hr class="hr-ticket">
           </div>
           <div class="is-text-align">
-            <a class="button checkout"> REALIZAR PAGO</a>
+            <div id="paypal-button"></div>
+            <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+            <script>
+              paypal.Button.render({
+                // Configure environment
+                env: 'sandbox',
+                client: {
+                  sandbox: 'ARc_q7vmgMkS6-WwxwjpwGYPDfU9kfH2xhJe_qV4yiywS-XuD9zXeG9SQgF3BjDuc70bZqsFEJ2xGVzM',
+                  production: 'demo_production_client_id'
+                },
+                // Customize button (optional)
+                locale: 'en_MX',
+                style: {
+                  size: 'small',
+                  color: 'gold',
+                  shape: 'pill',
+                },
+            
+                // Enable Pay Now checkout flow (optional)
+                commit: true,
+            
+                // Set up a payment
+                payment: function(data, actions) {
+                  return actions.payment.create({
+                    transactions: [{
+                      amount: {
+                        total: $('#total').html(),
+                        currency: 'MXN'
+                      }
+                    }]
+                  });
+                },
+                // Execute the payment
+                onAuthorize: function(data, actions) {
+                  return actions.payment.execute().then(function() {
+                    // Show a confirmation message to the buyer
+                    window.alert('Thank you for your purchase!');
+                  });
+                }
+              }, '#paypal-button');
+            
+            </script>
           </div>
         </div>
       </div>
