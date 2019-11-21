@@ -42,11 +42,13 @@ function addProduct(){
     gender: getGender(),
     active: true
   }
+
+  //console.log(itemToSend);
   postItem(itemToSend);
 }
 
 function postItem(itemToPost){
-
+  console.log(itemToPost);
   json_to_send = JSON.stringify(itemToPost);
 
   $.ajax({
@@ -82,12 +84,12 @@ function getType(){
     return {shirt: true}
   }
   if($("#itemlongsleeve").prop("checked")){
-    return {longsleeve: true}
+    return {longsleeves: true}
   }
   if($("#itemhoodie").prop("checked")){
     return {hoodie: true}
   }
-  if($("#itemhoodie").prop("checked")){
+  if($("#itemaccesorio").prop("checked")){
     return {accessorie: true}
   }
 }

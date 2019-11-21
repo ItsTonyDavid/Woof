@@ -35,7 +35,7 @@ window.onload = function(){
   getCheckFilters()
 
   var gender = getUrlParameter('gender');
-  if(!gender){console.log("No gender"); getItems();}
+  if(!gender){getItems();}
   else{getItemsbyGender(gender)}
 
   if(!gender){ gender = "TODO"}
@@ -149,11 +149,10 @@ function getCheckFilters(){
 }
 
 function getItemType(item){
-  console.log(item);
-  if (item.itemType.shirt == true) return "shirt"
-  if (item.itemType.longsleeves == true) return "longsleeves"
-  if (item.itemType.hoodie == true) return "hoodie"
-  if (item.itemType.accessorie == true) return "accessorie"
+  if (item.itemType.shirt == true){ return "shirt"}
+  if (item.itemType.longsleeves == true){ return "longsleeves"}
+  if (item.itemType.hoodie == true){ return "hoodie"}
+  if (item.itemType.accessorie == true){ return "accessorie"}
 }
 
 function getItemSize(item){
