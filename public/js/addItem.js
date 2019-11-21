@@ -36,14 +36,12 @@ function addProduct(){
   itemToSend = {
     name: $("#itemname").val(),
     price: $("#itemprice").val(),
-    img: getImage(),
+    img: $("#itempic").val(),
     sizes: getItemSizes(),
     itemType: getType(),
     gender: getGender(),
     active: true
   }
-
-  console.log(itemToSend);
   postItem(itemToSend);
 }
 
@@ -121,8 +119,4 @@ function getItemSizes(){
     size: "l",
     quantity: l
   }]
-}
-
-function getImage() {
-  return "";
 }

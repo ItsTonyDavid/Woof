@@ -35,12 +35,8 @@ window.onload = function(){
   getCheckFilters()
 
   var gender = getUrlParameter('gender');
-  if(!gender){
-    getItems();
-  }
-  else{
-    getItemsbyGender(gender)
-  }
+  if(!gender){console.log("No gender"); getItems();}
+  else{getItemsbyGender(gender)}
 
   if(!gender){ gender = "TODO"}
   if(gender == "female"){ gender = "MUJER"}
@@ -63,7 +59,7 @@ function createItemCards(req){
         html += '<div class="card-image">'
           html += '<figure class="image is-3by4">'
             html += '<img src="'
-            html += 'https://bulma.io/images/placeholders/480x600.png'
+            html += items[i].img
             html+= '" alt="Placeholder image">'
           html += '</figure>'
         html += '</div>'
@@ -153,6 +149,7 @@ function getCheckFilters(){
 }
 
 function getItemType(item){
+  console.log(item);
   if (item.itemType.shirt == true) return "shirt"
   if (item.itemType.longsleeves == true) return "longsleeves"
   if (item.itemType.hoodie == true) return "hoodie"

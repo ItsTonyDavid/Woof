@@ -14,7 +14,7 @@
     <nav class="navbar" role="navigation" aria-label="dropdown navigation">
       <div class="navbar-menu">
         <div class="navbar-brand">
-          <a class="navbar-item" href="#">
+          <a class="navbar-item" href="index.html">
             <h1 class="is-title is-logo" style="color: white;"> Woofshop.</h1>
           </a>
 
@@ -66,13 +66,13 @@
             </div>
             <div class="columns">
               <div class="column is-6 is-offset-2 ">
-                <div class="control">
+                <div class="">
                   <label class="radio">
-                    <input id="itemmale" type="radio" name="answer">
+                    <input id="itemmale" type="radio" name="gender">
                     Hombre
                   </label>
                   <label class="radio">
-                    <input id="itemfemale" type="radio" name="answer">
+                    <input id="itemfemale" type="radio" name="gender">
                     Mujer
                   </label>
                 </div>
@@ -113,7 +113,8 @@
             </div>
             <div class="columns">
               <div class="column is-6 is-offset-2 ">
-                <div class="control">
+
+                <div class="field">
                   <label class="radio">
                     <input id="itemcamisa" type="radio" name="answer">
                     Camisa
@@ -130,6 +131,19 @@
                     <input id="itemaccesorio" type="radio" name="answer">
                     Accesorio
                   </label>
+
+
+                  <!-- <div class="bd-notification is-dark">
+                    <div class="field">
+                      <input class="is-checkradio is-white" id="exampleRadioWhite" type="radio" name="exampleRadioWhite" checked="checked">
+                      <label for="exampleRadioWhite">Radio - white</label>
+
+                      <input class="is-checkradio is-white" id="exampleRadioWhite2" type="radio" name="exampleRadioWhite2">
+                      <label for="exampleRadioWhite2">Radio - white</label>
+                    </div>
+                  </div> -->
+
+
                 </div>
               </div>
             </div>
@@ -170,6 +184,8 @@
               </div>
             </div>
           </div>
+          <br>
+          <br>
           <div name="itemName">
             <div class="columns">
               <div class="column is-8 is-offset-2 ">
@@ -177,27 +193,13 @@
                   Imagen del producto
                 </h2>
                 <h2 class="title is-6 has-text-grey">
-                  Selecciona una fotografia del producto.
+                  Agrega aqui una URL del producto a agregar
                 </h2>
               </div>
             </div>
-            <br>
-            <br>
             <div class="columns">
               <div class="column is-6 is-offset-2 ">
-                <div class="file">
-                  <label class="file-label">
-                    <input id="itempic" class="file-input" type="file" name="resume">
-                    <span class="file-cta">
-                      <span class="file-icon">
-                        <i class="fas fa-upload"></i>
-                      </span>
-                      <span class="file-label">
-                        Selecciona un archivo.
-                      </span>
-                    </span>
-                  </label>
-                </div>
+                <input id="itempic" class="input" type="text" placeholder="i.e. Camisa negra hombre">
               </div>
             </div>
           </div>
