@@ -40,7 +40,7 @@ $( "#signup" ).click(function() {
         json_to_send2 = JSON.stringify(json_to_send2);
         console.log(json_to_send2);
         $.ajax({
-          url: 'http://localhost:3000/login',
+          url: 'https://woofshop.herokuapp.com/login',
           headers: {
               'Content-Type':'application/json',
               "Access-Control-Allow-Origin": "*"
